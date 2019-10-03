@@ -8,9 +8,8 @@
 #### Clone the repo and make it yours:
 
 ```bash
-git clone --depth 1 https://github.com/devangelmotta/notes-front.git
-cd express-rest-es2017-boilerplate
-rm -rf .git
+git clone --depth 1 https://github.com/devangelmotta/notes-front.git <ANY_FRIENDLIER_NAME>
+cd <ANY_FRIENDLIER_NAME>
 ```
 
 ## Running Locally
