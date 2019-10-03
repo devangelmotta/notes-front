@@ -1,0 +1,9 @@
+{
+  "app.components.home.title": "Todas tus notas",
+  "app.components.home.subtitle": "Guarda tus notas",
+  "app.components.home.buttonSave": "Click para guardar",
+  "app.components.home.buttonSaveLoading": "Guardando...",
+  "app.containers.LocaleToggle.es": "es",
+  "app.containers.LocaleToggle.en": "en",
+  "app.NotFoundPage.header": "Página no encontrada."
+}

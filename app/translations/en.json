@@ -1,0 +1,9 @@
+{
+  "app.components.home.title": "All you'r notes",
+  "app.components.home.subtitle": "Save you'r notes",
+  "app.components.home.buttonSave": "Click for saved",
+  "app.components.home.buttonSaveLoading": "Saving...",
+  "app.containers.LocaleToggle.es": "es",
+  "app.containers.LocaleToggle.en": "en",
+  "app.NotFoundPage.header": "Page not found."
+}
