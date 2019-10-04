@@ -30,6 +30,7 @@ import {
   TiTrash,
 } from 'react-icons/ti';
 import { getObjectBody, setCookie } from '../../utils/getDataDeviceConnection';
+import { useWindowDimensions } from '../../utils/getScreenSize';
 
 function checkExistSession(sucess) {
   if (sucess) {
@@ -62,6 +63,7 @@ function checkExistSession(sucess) {
 export function HomePage({ home, sendLogin, sendCreateNote }) {
   useInjectReducer({ key: 'homePage', reducer });
   useInjectSaga({ key: 'homePage', saga });
+  const { height, width } = useWindowDimensions();
   const {
     loadLogin,
     sucessLogin,
@@ -75,7 +77,7 @@ export function HomePage({ home, sendLogin, sendCreateNote }) {
     errorCreate,
   } = home;
   const [stateNotes, setNotes] = useState(false);
-  console.log('States ', home);
+
   useEffect(() => {
     sendLogin();
   }, []);
@@ -96,7 +98,6 @@ export function HomePage({ home, sendLogin, sendCreateNote }) {
           <Modal.Body>
             <p>¿Quién eres tú?</p>
             {data.map((item, index) => {
-              console.log('Data que llega a map ', item);
               return (
                 <Card
                   key={index}
@@ -207,7 +208,6 @@ export function HomePage({ home, sendLogin, sendCreateNote }) {
   }
 
   function RenderNewItem(item) {
-    console.log('RenderNewItem ', item.data.text);
     if (item) {
       return (
         <Card
@@ -299,7 +299,7 @@ export function HomePage({ home, sendLogin, sendCreateNote }) {
     <div
       style={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: width < 900 ? 'column' : 'row',
         justifyContent: 'space-between',
         alignContent: 'center',
         height: '100%',
@@ -312,7 +312,7 @@ export function HomePage({ home, sendLogin, sendCreateNote }) {
           flexDirection: 'column',
           justifyContent: 'space-between',
           alignItems: 'center',
-          width: '40%',
+          width: width < 900 ? '90%' : '40%',
           height: '100%',
         }}
       >
@@ -422,7 +422,7 @@ export function HomePage({ home, sendLogin, sendCreateNote }) {
           flexDirection: 'column',
           justifyContent: 'space-between',
           alignItems: 'center',
-          width: '60%',
+          width: width < 900 ? '90%' : '60%',
           height: '100%',
         }}
       >

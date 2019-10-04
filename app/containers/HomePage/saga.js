@@ -58,7 +58,6 @@ export function* checkLogin(action) {
       const repos = yield call(request, requestUrl, options);
       yield put(sucessLogin(repos));
     } catch (err) {
-      console.log('Error catch', err);
       yield put(errorLogin(err));
     }
   }
@@ -83,7 +82,7 @@ export function* createNote(action) {
   };
   try {
     const repos = yield call(request, requestUrl, options);
-    console.log('Lo que llega al crear la nota ', repos);
+
     yield put(sucessCreate(repos.body));
   } catch (err) {
     console.log('Error catch', err);
